@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annoataion
+  annotations:
+    description: adding annotaion section into pod
+spec:
+  containers:
+  - name: annotation-container
+    image: tomcat
+    ports:
+    - containerPort: 90

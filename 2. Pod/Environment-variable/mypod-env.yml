@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod-env
+  annotations:
+    description: this is example for env variables
+spec:
+  containers: 
+  - name: c01
+    image: tomcat
+    env:
+      - name: conatiner-name
+        value: container-c01
+      - name: container-id
+        value: c01
