@@ -1,0 +1,5 @@
+#Provide a label to node to place a pod only in that particular nodes
+kubectl label node <existing_node_name> hardware=<new_node_name>
+
+#If the node label is already exists, then we can overwrite it with below command
+kubectl label node --overwrite <OLD_node_name> hardware=<new_node_name>

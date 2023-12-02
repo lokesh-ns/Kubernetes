@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myrs
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+    - {key: name, operator: In, values: [lokesh, Naveen]}
+    - {key: env, operator: NotIn, values: [testing, development]}
+  template:
+    metadata:
+      name: test1
+      labels:
+        name: lokesh
+    spec:
+      containers:
+      - name: rsc
+        image: httpd
+        ports:
+        - containerPort: 80

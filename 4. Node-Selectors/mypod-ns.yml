@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd
+  labels:
+    env: production
+    class: pod
+spec:
+  containers:
+    - name: c00
+      image: httpd
+  nodeSelector:
+    hardware: node2

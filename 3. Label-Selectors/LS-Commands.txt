@@ -1,0 +1,16 @@
+# To get pods and and it's asscociated labels
+kubectl get pods --show-labels
+
+#Equity based Label Selector (=, !=)
+
+# To get pods based on attached label
+kubectl get pods -l <label>
+ex: kubectl get pods -l class=pod
+
+# To get pods based on attached multiple labels
+kubectl get pods -l <label1>, <label2>
+ex: kubectl get pods -l class=pod,env=production (NO SPACES BETWEEN MULTIPLE LABELS)
+
+
+#set based Label Selector (in, notin OR in, notin, =, ==, !=, gt, lt)
+kubectl get pods -l "env in (testing, production)"

@@ -1,0 +1,29 @@
+Replication controller only supports Equity based selectors (=, !=)
+
+
+# To get the replication controller
+kubectl get rc
+
+# To get pods of rc
+kubectl get pods
+
+# To get the details of rc
+kubectl describe rc <rc_name>
+
+# To get the details of rc pods
+kubectl describe pod <rc_pod_name>
+
+# To get the labels of rc
+kubectl get rc --show-labels
+
+# To get the labels of rc pod
+kubectl get pod --show-labels
+
+# To scale up the pods of rc
+kubectl scale rc -l <label_of_rc> --replicas=<number>
+
+# To scale down the pods of rc
+kubectl scale rc -l <label_of_rc> --replicas=<number>
+
+# To delete the pod of rc
+kubectl delete pod <rc_pod_name>
