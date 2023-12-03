@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: my-dp
+  template:
+    metadata:
+      name: testpod
+      labels: 
+        name: my-dp
+    spec:
+      containers:
+      - name: c01
+        image: tomcat
+        ports:
+        - containerPort: 80

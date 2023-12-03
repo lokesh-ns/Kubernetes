@@ -1,0 +1,18 @@
+CASE 1: communicate with container to container in same pod
+
+# To enter into the container 
+kubectl exec <pod_name> -it -c <container_name> -- /bin/bash
+
+# To install curl in the container
+apt update && apt install curl
+
+# To communicate form one container to other in the same pod follow below command
+curl localhost:<exposed_port_of_the_container>
+
+CASE 2: communicate with pod to pod in same cluster
+
+# To install curl in the container
+apt update && apt install curl
+
+# To communicate form one pod to other in the same cluster follow below command
+curl <ip_of_pod>:<exposed_port_of_the_container>

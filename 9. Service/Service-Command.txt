@@ -1,0 +1,18 @@
+# To get the list of services
+kubectl get svc 
+
+# To describe the services
+kubectl describe svc <service_name>
+
+# FOR CLUSTER IP
+Exposes Virtual IP (VIP) of a cluster and service is only accessible with in the 
+cluster
+
+Command: curl <service_IP>:<exposed_port>
+
+# FOR NodePort
+Exposes Virtual IP (VIP) of a cluster and service is accessible from outside the cluster
+
+Command: <Public_DNS_of_Instance>:<NodePort_IP>
+
+Disclaimer: NodePort_IP can be obtained from PORT data of the services using ( kubectl get svc ) command
