@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - name: c01
+    image: centos
+    volumeMounts:
+    - name: myv1
+      mountPath: /tmp/c01
+  volumes:
+  - name: myv1
+    hostPath:
+      path: /tmp/data

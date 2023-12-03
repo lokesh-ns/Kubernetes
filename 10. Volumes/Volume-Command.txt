@@ -1,0 +1,15 @@
+# FOR EmptyDir
+volume is created inside the pod and the lifespan of it exists until pod exists. The same common volume is shared by the containers in the pod.
+
+>> Login to volume mountpath of container 1 and create a file or directory and the same will be reflected in the mountpath of conatiner 2 because the same volume is shared by containers
+
+
+# FOR hostPath
+volume is created inside the cluster or host and the lifespan of it exists until cluster or host exists. The same common volume is shared by the containers in the pod.
+
+Even the pod dies the volume won't be get affected because it is host and the newly created pod will share a volume from host
+
+# ssh into minikube cluster
+>> minikube ssh
+
+# Change the directory to hostPath, you will find the directory mentioned in hostPath. Now create a file or directory and the same file is visible in the container because the volume is shared by the pod
