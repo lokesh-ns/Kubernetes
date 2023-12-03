@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myd
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      name: my-d
+  template:
+    metadata:
+      name: dpod
+      labels: 
+        name: my-d
+    spec:
+      containers:
+      - name: d-c
+        image: httpd
+        ports:
+        - containerPort: 80

@@ -1,0 +1,38 @@
+# To get the deployment
+kubectl get deploy
+
+# To get the details of deployment
+kubectl describe deploy <deployment_name>
+
+# To ge the ReplicaSet
+kubectl get rs
+
+# To get the details of ReplicaSet
+kubectl describe rs
+
+# To get the pods
+kubectl get pods
+
+# To get details of the pod
+kubectl describe pod <pod_name>
+
+# To get the log of the running pod
+kubectl logs -f <pod_name>
+
+# To rollout to new version of deployment
+kubectl rollout status deploy <deployment_name>
+
+# To get the rollout histoy of deployment
+kubectl rollout histoy deploy <deployment_name>
+
+# To get back to previous version of deployment
+kubectl rollout undo deploy <deployment_name>
+
+# To rollout to specific version of deployment
+kubectl rollout status deploy <deployment_name> --to-version=<target_deployment_version>
+
+#target_deployment_version can be obtained by below command
+kubectl rollout histoy deploy <deployment_name>
+
+# To scale up or scale down the deployment
+kubectl scale deploy <deployment_name> --replicas=<number>
