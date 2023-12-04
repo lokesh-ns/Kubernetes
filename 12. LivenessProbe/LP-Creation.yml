@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mylive
+spec:
+  containers:
+  - name: c01
+    image: tomcat
+    args:
+      - /bin/bash
+      - -c
+      - touch /tmp/loki; sleep 100
+    livenessProbe:
+      exec:
+        command:
+        - cat 
+        - /tmp/loki
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      timeoutSeconds: 30
