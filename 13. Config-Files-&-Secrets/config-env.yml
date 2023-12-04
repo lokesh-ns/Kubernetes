@@ -1,0 +1,18 @@
+# Accessing config files using env
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myconfigfile
+spec:
+  containers:
+  - name: c01
+    image: httpd
+    ports:
+    - containerPort: 80
+    env:                       
+    - name: MYCONFIG            #using env variable
+      valueFrom:
+        configMapKeyRef:
+          name: myconf
+          key: test.conf

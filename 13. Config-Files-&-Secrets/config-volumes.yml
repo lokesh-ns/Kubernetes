@@ -1,0 +1,22 @@
+# Accessing config files using volumes
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myconfigfile
+spec:
+  containers:
+  - name: c01
+    image: httpd
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: myvol
+      mountPath: /tmp/config
+  volumes:
+  - name: myvol
+    configMap:
+      name: myconf
+      items:
+      - key: test.conf
+        path: test.conf

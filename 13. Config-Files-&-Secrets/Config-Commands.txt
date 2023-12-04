@@ -1,0 +1,18 @@
+# To create a file naming test.conf
+vi test.conf
+>> create a sample text in it.
+
+# To create a config file
+kubectl create configmap <name_of_config_file_to_create> --from-file=<test.conf(created conf file)>
+
+# To get the config files
+kubectl get configmap
+
+# Configmap can be accessed in 2 methods
+1. Through volumes
+2. Through Environment variables
+
+#Exection of both the methods is explaned in a written document
+
+
+
