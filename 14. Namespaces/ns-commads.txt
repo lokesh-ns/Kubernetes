@@ -1,0 +1,14 @@
+# To get namespace
+kubectl get ns 
+
+# To launch the pod in certain namespaces
+kubectl apply -f <yaml_file> -n <namespace_name>
+
+# To get the pods from the namespaces
+kubectl get pods -n <namespace_name>
+
+# To set a default namespace 
+kubectl config set-context $(kubectl config current-context) --namespace=<namespace_name>
+
+# To view on which namespace we are currently working on 
+kubectl config view | grep namespace
