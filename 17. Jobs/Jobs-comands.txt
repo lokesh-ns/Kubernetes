@@ -1,0 +1,17 @@
+# To get the list of jobs
+kubectl get jobs
+
+# To get the logs of pod created by job
+kubectl logs -f <pod_name>
+
+# To watch the pod status for every 2 seconds
+watch kubectl get pods
+
+# To delete job 
+kubectl delete job <job_name>
+
+# Deletion of pod is not possible because it is a batch process and even on deletion new pod will auto create 
+to execute the task in the container and the deletion of pod is only happens on deleting the job
+
+# To get the cron jobs
+kubectl get cronjobs

@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: myjob
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template: 
+        spec:
+          containers:
+          - name: c01
+            image: httpd
+            command: ["/bin/bash", "-c", "while true; do echo 'hai lokesh'; sleep 20; done"]
+          restartPolicy: Never           

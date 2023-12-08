@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  parallelism: 5
+  activeDeadlineSeconds: 30
+  template:
+    metadata:
+      name: mytemp
+    spec:
+      containers:
+      - name: c01
+        image: tomcat
+        command: ["/bin/bash", "-c", "while true; do echo 'hai lokesh'; sleep 20; done"]
+      restartPolicy: Never
